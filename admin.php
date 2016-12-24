@@ -15,9 +15,9 @@
       <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
       <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
    </head>
-
+	
    <body>
-      <!-- Начало Меню -->
+      <!-- Menu start -->
       <div class="row">
          <div class="col-sm-4 col-md-2 col-lg-4"></div>
          <div class="col-sm-4 col-md-8 col-lg-4">
@@ -32,17 +32,18 @@
          </div>
          <div class="col-sm-4 col-md-2 col-lg-4"></div>
       </div>
-      <!-- Конец Меню -->
-      <!-- Начало Таблицы -->
+      <!-- Menu end -->
+
       <div class="row">
          <div class="col-sm-4 col-md-2 col-lg-4"></div>
          <div class="col-sm-4 col-md-8 col-lg-4">
-            <p>
-            <ol class="breadcrumb">
-               <li><a href="index.php">Главная</a></li>
-               <li class="active">Админ панель</li>
-            </ol>
-            </p>
+
+	<!-- breadcrumbs start -->
+	<p><ol class="breadcrumb">
+		<li><a href="index.php">Главная</a></li>
+		<li class="active">Админ панель</li>
+	</ol></p>
+	<!-- breadcrumbs end -->
 
 <?php
 require_once 'config.php'; 	// Подключаем скрипт
@@ -100,7 +101,7 @@ while($rows=mysql_fetch_array($result)){
          </div>
          <div class="col-sm-4 col-md-2 col-lg-4"></div>
       </div>
-      <!-- Конец Таблицы -->
+	
       <div class="row">
          <div class="col-sm-4 col-md-2 col-lg-4"></div>
          <div class="col-sm-4 col-md-8 col-lg-4">
