@@ -45,19 +45,18 @@
             </p>
 
 <?php
-require_once 'config.php'; // подключаем скрипт
-
-$tbl_name="shop"; // Имя таблицы
+require_once 'config.php'; 	// Подключаем скрипт
+$tbl_name="shop"; 		// Имя таблицы
 
 // Соединяемся с базой данных
-mysql_connect("$host", "$user", "$password")or die("cannot connect"); 
-mysql_select_db("$database")or die("cannot select DB");
+mysql_connect ("$host", "$user", "$password") or die ("cannot connect"); 
+mysql_select_db ("$database") or die ("cannot select DB");
 
 // Выбираем базу для запими
 $sql="SELECT * FROM $tbl_name";
 $result=mysql_query($sql);
 ?>
-        
+
 <div class='panel panel-default'>
 
 <table class="table table-bordered table-hover">
@@ -80,24 +79,20 @@ while($rows=mysql_fetch_array($result)){
 ?>
 
 <tr>
-<td ><? echo $rows['date']; ?></td>
-<td ><? echo $rows['product']; ?></td>
-<td ><? echo $rows['price']; ?></td>
-<td ><? echo $rows['count']; ?></td>
-<td ><a href='tel:<? echo $rows['mobile']; ?>'><? echo $rows['mobile']; ?></a></td>
-<td ><a href='mailto:<? echo $rows['email']; ?>'><? echo $rows['email']; ?></a></td>
-<td ><? echo $rows['note']; ?></td>
-<td >
-	<a href="delete.php?id=<? echo $rows['id']; ?>"><span title="Удалить" class="glyphicon glyphicon-remove text-danger"></span></a>
-	<a href="javascript:(print());"><span title="Печать" class="glyphicon glyphicon-print text-primary"></span></a>
-</td>
-
+	<td ><? echo $rows['date']; ?></td>
+	<td ><? echo $rows['product']; ?></td>
+	<td ><? echo $rows['price']; ?></td>
+	<td ><? echo $rows['count']; ?></td>
+	<td ><a href='tel:<? echo $rows['mobile']; ?>'><? echo $rows['mobile']; ?></a></td>
+	<td ><a href='mailto:<? echo $rows['email']; ?>'><? echo $rows['email']; ?></a></td>
+	<td ><? echo $rows['note']; ?></td>
+	<td >
+		<a href="delete.php?id=<? echo $rows['id']; ?>"><span title="Удалить" class="glyphicon glyphicon-remove text-danger"></span></a>
+		<a href="javascript:(print());"><span title="Печать" class="glyphicon glyphicon-print text-primary"></span></a>
+	</td>
 </tr>
 
-<?php
-// close while loop 
-}
-?>
+<?php // close while loop } ?>
 
 </table>
 
