@@ -2,10 +2,12 @@
 <html>
    <head>
       <meta charset="utf-8">
-      <title>Админ панель</title>
+      <title>Admin Panel | <?php require_once 'config.php'; echo $sitename; ?></title>
+	   
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="description" content="Описание">
-      <meta name="keywords" content="Ключевые слова">
+      <meta name="description" content="<?php require_once 'config.php'; echo $description; ?>">
+      <meta name="keywords" content="<?php require_once 'config.php'; echo $keywords; ?>">
+	   
       <link href="css/style.css" rel="stylesheet">
       <link href="css/bootstrap.min.css" rel="stylesheet">
       <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
