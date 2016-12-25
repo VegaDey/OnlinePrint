@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Форма входа</title>
+    <title>LLogin form</title>
 
     <style type="text/css">
 @-webkit-keyframes swing
@@ -136,19 +136,16 @@ transform: translateY(0%);
     <script src="js/bootstrap.min.js"></script>
 
     <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
-
+	
 </head>
-
 <body></p>
 
-    <div class="row">
+<div class="row">
 <div class="col-md-4"></div>
 <div class="col-md-4 ">
 
     <?php
-
-	require_once 'config.php'; // подключаем скрипт
+	require_once 'config.php'; // inclide script
 
 	$login = isset($_GET['login'])?$_GET['login']:'';
 	$passwd = isset($_GET['passwd'])?$_GET['passwd']:'';
@@ -158,23 +155,20 @@ transform: translateY(0%);
 		if($login == "$adminuser" && $passwd == "$adminpass")
 			echo ('<p class="floating text-success">Данные введены верно.. Через 3 секунды будете перенаправлены.</p> <script language="javascript" type="text/javascript">setTimeout(function () { window.location.href = "admin.php";}, 3000);</script>');
 		else
-			echo '<div class="swing text-danger">Доступ запрещен!</div>';
+			echo '<div class="swing text-danger">Access Error</div>';
 	}
 	else
-		echo '<p class="text-info">Введите логин и пароль</p>';
+		echo '<p class="text-info">Enter Login & Password</p>';
 ?>
 </p>
 
 <form class="forms" method="get">
     <input type="text" value="" name="login" placeholder="Логин" class="form-control" /></p>
     <input type="password" value="" name="passwd" placeholder="Пароль" class="form-control" /></p>
-    <button type="submit" class="btn btn-success btn-wide">Войти</button></p><span>По умолчанию Логин: <?php echo ($adminuser); ?> и Пароль: <?php echo ($adminpass); ?></span>
+    <button type="submit" class="btn btn-success btn-wide">Войти</button></p><span>Standart Login: <?php echo ($adminuser); ?> & Password: <?php echo ($adminpass); ?></span>
 </div>
 <div class="col-md-4"></div>
     </div>
 
-
-
 </body>
-
 </html>
