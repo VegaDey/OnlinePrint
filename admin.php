@@ -61,39 +61,36 @@ $result=mysql_query($sql);
 <div class='panel panel-default'>
 
 <table class="table table-bordered table-hover">
-<tr class='success'>
-<td colspan="8" >Новые заказы</td>
-</tr>
-<tr>
-<td align="center" ><strong>Дата</strong></td>
-<td align="center" ><strong>Продукт</strong></td>
-<td align="center" ><strong>Цена</strong></td>
-<td align="center" ><strong>#</strong></td>
-<td align="center" ><strong>Телефон</strong></td>
-<td align="center" ><strong>E-mail</strong></td>
-<td align="center" ><strong>Сообщение</strong></td>
-<td align="center" >&nbsp;</td>
-</tr>
+  <tr class='success'>
+    <td colspan="8" >Новые заказы</td>
+  </tr>
+  <tr>
+    <td align="center" ><strong>Дата</strong></td>
+    <td align="center" ><strong>Продукт</strong></td>
+    <td align="center" ><strong>Цена</strong></td>
+    <td align="center" ><strong>#</strong></td>
+    <td align="center" ><strong>Телефон</strong></td>
+    <td align="center" ><strong>E-mail</strong></td>
+    <td align="center" ><strong>Сообщение</strong></td>
+    <td align="center" >&nbsp;</td>
+  </tr>
 
-<?php
-while($rows=mysql_fetch_array($result)){
-?>
+<?php while($rows=mysql_fetch_array($result)){ ?>
 
-<tr>
-	<td ><? echo $rows['date']; ?></td>
-	<td ><? echo $rows['product']; ?></td>
-	<td ><? echo $rows['price']; ?></td>
-	<td ><? echo $rows['count']; ?></td>
-	<td ><a href='tel:<? echo $rows['mobile']; ?>'><? echo $rows['mobile']; ?></a></td>
-	<td ><a href='mailto:<? echo $rows['email']; ?>'><? echo $rows['email']; ?></a></td>
-	<td ><? echo $rows['note']; ?></td>
-	<td >
-		<a href="delete.php?id=<? echo $rows['id']; ?>"><span title="Удалить" class="glyphicon glyphicon-remove text-danger"></span></a>
-		<a href="javascript:(print());"><span title="Печать" class="glyphicon glyphicon-print text-primary"></span></a>
-	</td>
-</tr>
+  <tr>
+    <td ><? echo $rows['date']; ?></td>
+    <td ><? echo $rows['product']; ?></td>
+    <td ><? echo $rows['price']; ?></td>
+    <td ><? echo $rows['count']; ?></td>
+    <td ><a href='tel:<? echo $rows['mobile']; ?>'><? echo $rows['mobile']; ?></a></td>
+    <td ><a href='mailto:<? echo $rows['email']; ?>'><? echo $rows['email']; ?></a></td>
+    <td ><? echo $rows['note']; ?></td>
+    <td >
+    <a href="delete.php?id=<? echo $rows['id']; ?>"><span title="Удалить" class="glyphicon glyphicon-remove text-danger"></span></a>
+    </td>
+  </tr>
 
-<?php // close while loop } ?>
+<?php } ?> 
 
 </table>
 
